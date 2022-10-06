@@ -34,7 +34,19 @@ function checkGuess(){
     } else {
         wrong += 1
         alert("Wrong Musician")
+
+    
+    if(count>=3){
+        if(wrong>=3){
+        gameover()
+        }
+
+     }
+    
+    function gameover(){
+        alert("Sorry,game over")
     }
+}
     result.innerHTML = "Correct count:"+correct+"Wrong count:"+wrong
 
 }
