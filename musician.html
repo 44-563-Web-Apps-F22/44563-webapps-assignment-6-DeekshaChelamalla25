@@ -23,30 +23,33 @@
 <script> 
 var correct = 0
 var wrong = 0
+count = 0
 function checkGuess(){
     
     name = document.getElementById("form1_name").value
     check = document.getElementById("form1_check").value
     res = name.localeCompare(check)
     if(res == 0){
+        count = 0
         correct += 1
         alert("You got it right")
     } else {
+        count += 1
         wrong += 1
         alert("Wrong Musician")
-    }
     
     
+    if(count >= 3){
         if(wrong>=3){
-        gameover()
+          gameover()
         }
-
+    }
      
     
     function gameover(){
         alert("Sorry,game over")
     }
-
+    }
     result.innerHTML = "Correct count:"+correct+"Wrong count:"+wrong
 
 }
